@@ -100,5 +100,5 @@
     back:
   #  - ThiefBeacon # No need if no objectives - Jamboree
     - SatchelThief
-    - ClothingHandsChameleonThief
+    # - ClothingHandsChameleonThief - Goobedit, since thieves have intrinsic pickpocketing now we don't need these
     - PinpointerThief # Goob edit

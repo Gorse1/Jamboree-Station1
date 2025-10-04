@@ -3,6 +3,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common.Devour;
 using Content.Shared.Actions;
 using Content.Shared.Item;
 using Content.Shared.Mobs;
@@ -126,6 +127,9 @@ public abstract class SharedSlaughterDemonSystem : EntitySystem
             return;
 
         _container.Insert(pullingEnt, slaughterDevour.Container);
+
+        // Stop them from being able to self-revive
+        EnsureComp<PreventSelfRevivalComponent>(pullingEnt);
 
         // Kill them for sure, just in case
         if (_mobStateQuery.TryComp(pullingEnt, out var mobState))
